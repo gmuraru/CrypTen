@@ -272,7 +272,18 @@ class FromOnnx:
         """
         Gets parameter name from parameter key.
         """
-        return name[name.rfind(".") + 1 :]
+
+        to_check = ["weight", "bias", "running_mean", "running_var"]
+
+        for val in to_check:
+            if val in name:
+                return val
+
+        if "gamma" in name:
+            return "weight"
+
+        if "beta" in name:
+            return "bias"
 
     @staticmethod
     def get_attributes(node):

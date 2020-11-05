@@ -49,7 +49,7 @@ from .module import (
     Transpose,
     Unsqueeze,
 )
-from .onnx_converter import TF_AND_TF2ONNX, from_pytorch, from_tensorflow
+from .onnx_converter import TF_AND_TF2ONNX, from_pytorch, from_tensorflow, from_onnx
 
 
 # expose contents of package
